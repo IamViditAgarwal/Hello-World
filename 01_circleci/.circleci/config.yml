@@ -1,0 +1,16 @@
+# Using CircleCi
+# CircleCi configuration file
+---
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:4.8.2 # You can choose any docker image here
+    steps:
+      - checkout
+      - run: echo "Hello World"
+workflows:
+  version: 2
+  test-build:
+    jobs:
+      - build
